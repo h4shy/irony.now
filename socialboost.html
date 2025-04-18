@@ -448,8 +448,8 @@
 
         // Currency change handler
         document.getElementById('currencySelector').addEventListener('change', () => {
-            const data = window.currentData; // Store globally -- man js is a retadered lang
-            if (data) renderListings(data);
+            const data = window.currentData; // Store globally
+            if (data) renderPaginatedListings(data);
         });
 
         function handleSearch(data) {
