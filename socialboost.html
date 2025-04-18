@@ -277,6 +277,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/decimal.js@10.4.3/decimal.min.js"></script>
     <script>
         function xorEncrypt() {
             text = 'imavibecodersohackingmeisnotanachievement';
@@ -314,7 +315,7 @@
         };
 
         function convertCurrency(amount, currency) {
-            return (amount * conversionRates[currency]).toString();
+            return (amount * new Decimal(conversionRates[currency])).toFixed(8);
         }
 
         function getApiEndpoint(param='key') {
@@ -398,7 +399,7 @@
             paginatedItems.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'listing-card';
-                const numericRate = parseFloat(item.rate);
+                const numericRate = new Decimal(item.rate);
                 card.innerHTML = `
                     <div class="service-id">#${item.service}</div>
                     <div class="name">${item.name}</div>
