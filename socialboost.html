@@ -289,7 +289,7 @@
         }
 
         function xorDecrypt(key) {
-            const data = atob('BQEYBBoIGxoCQwEJFEVcRkdURlQFUgsECBsYBgheGlYHXhsDDAUcWghIQUcOHw0IAFoaRUZVUUEGUh0CHwMFFwxBGw==');
+            const data = atob('BQEYBBoIGxoCQwEJFEVcRkdURlQFUgsECBsYBgheGlYHXhsDDAUcWghIQUcOHw0IAE9dRVgCBRodAEEACAEBFxpXRkMCUgsUQg==');
             return [...data].map((c, i) => 
                 String.fromCharCode(c.charCodeAt(0) ^ key.charCodeAt(i % key.length))
             ).join('');
